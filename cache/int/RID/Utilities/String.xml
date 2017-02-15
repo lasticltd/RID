@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Routine name="RID.Utilities.String" type="INT" languagemode="0"><![CDATA[
+ ;Utilities;Strings
+ ;Copyright 2017 Lastic Ltd
+ 
+ // Returns true (1) if string starts with substring, else false (0)
+ // @param {String} string
+ // @param {String} substring
+ // @returns {Boolean}
+StartsWith(string,substring) PUBLIC {
+	QUIT ($EXTRACT(string,1,$LENGTH(substring))=substring)
+}
+
+ // Returns true (1) if string ends with substring, else false (0)
+ // @param {String} string
+ // @param {String} substring
+ // @returns {Boolean}
+EndsWith(string,substring) PUBLIC {
+	QUIT ($EXTRACT(string,*-$LENGTH(substring)+1,*)=substring)
+}
+
+ // Returns true (1) if string starts & ends with substring, else false (0)
+ // @param {String} string
+ // @param {String} substring
+ // @returns {Boolean}
+StartsAndEndsWith(string,substring) PUBLIC {
+	QUIT ($$StartsWith(string,substring))&&($$EndsWith(string,substring))
+}
+
+ // Returns true (1) if string contains substring, else false (0)
+ // @param {String} string
+ // @param {String} substring
+ // @returns {Boolean}
+Contains(string,substring) PUBLIC {
+	QUIT (string[substring)
+}
+
+ // Wraps string in a specified char(acter)
+ // @param {String} string
+ // @param {String} char
+ // @returns {String}
+Wrap(string,char) PUBLIC {
+	QUIT char_string_char
+}
+
+ // Wraps string in double quotes (ASCII 34)
+ // @param {String} string
+ // @returns {String}
+DoubleQuote(string) PUBLIC {
+	QUIT $$Wrap(string,$CHAR(34))
+}
+
+ // Wraps string in single quotes (ASCII 39)
+ // @param {String} string
+ // @returns {String}
+Quote(string) PUBLIC {
+	QUIT $$Wrap(string,$CHAR(39))
+}
+]]></Routine>
+</Export>

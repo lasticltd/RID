@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Routine name="RID.Utilities.Form" type="INT" languagemode="0"><![CDATA[
+ ;Utilities;Form
+ ;Copyright 2017 Lastic Ltd
+
+
+ // Closes the currently-displayed form
+Close() PUBLIC {
+	SET %lzskip="-"
+}
+
+ // Displays a new form
+Show(systemID,formID,metrics=1,closeOnExit=0) PUBLIC {
+}
+
+ // Get cached metrics for the specified / currently-displayed form
+GetMetrics(systemID="",formID="") PUBLIC {
+}
+]]></Routine>
+</Export>
